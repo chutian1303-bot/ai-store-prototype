@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-canvas-stage text-ink font-sans antialiased;
+    /* 防止移动端双击缩放/橡皮筋滚动到 demo 容器外 */
+    overscroll-behavior: none;
+  }
+}
+
+/* 隐藏滚动条但保留滚动能力(feeds 内部使用) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
